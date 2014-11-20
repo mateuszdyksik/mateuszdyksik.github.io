@@ -1,0 +1,120 @@
+@import "base";
+
+@include global-reset;
+@include establish-baseline;
+
+html, body { 
+  height: 100%;
+  width: 100%;
+
+  background-color: $color-white;
+}
+
+#main-page {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+
+  @include container($page-width);
+  height: 90%;
+  max-height: 680px;
+  
+  color: $color-black;
+  border: 3px solid $color-black;
+  @include border-radius(3px);
+
+  header {
+    @include span(3 of 13 nest);
+
+    @include adjust-font-size-to(1.3em);
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-variant: small-caps;
+
+    border-bottom: 3px solid $color-black;
+    border-right: 3px solid $color-black;
+    @include border-bottom-right-radius(3px);
+  }
+
+  h1:before {
+    display: block;
+    padding-left: 2px;
+
+    font-size: .4em;
+    line-height: 1em;
+    text-align: left;
+    
+    content: 'Imię i nazwisko ';
+  }
+
+  h1 {
+    padding-bottom: .3em;
+    
+    font-size: 1.5em;
+    line-height: 1em;
+    text-align: center;
+
+    border-bottom: 3px solid $color-black;
+  }
+
+  ul {
+    border-right: 3px solid $color-black;
+  }
+
+  li {
+    @include span(4 of 7 wider);
+    display: inline-block;
+
+    line-height: 1.9em;
+
+    border-right: 3px solid $color-black;
+  }
+
+  li:first-child {
+    margin-top: -3px;
+
+    border-bottom: 3px solid $color-black;
+  }
+
+  li:hover {
+    background-color: $color-black;
+  }
+
+  a {
+    display: block;
+    padding-left: 5px;
+
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+
+    color: $color-black;
+  }
+
+  li:hover a {
+    color: $color-white;
+  }
+
+  h2:before {
+    display: block;
+    margin-bottom: -3px;
+    margin-left: -3px;
+
+    font-size: .4em;
+    line-height: 1em;
+    text-align: left;
+
+    content: 'Semestr ';
+  }
+
+  h2 {
+    @include span(3 of 7 omega narrow);
+    padding-right: .2em;
+    
+    font-size: 1.5em;
+    line-height: 1em;
+    text-align: center;
+  }
+
+  a:after {
+    content: ' >';
+  }
+}
