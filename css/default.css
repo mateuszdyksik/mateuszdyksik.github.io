@@ -153,10 +153,10 @@ html, body {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  height: 90%;
-  max-height: 680px;
+  max-height: 750px;
+  min-width: 750px;
   color: #474645;
-  border: 3px solid #474645;
+  border: 4px solid #474645;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -169,22 +169,21 @@ html, body {
 }
 /* line 26, ../_sass/default.scss */
 #main-page header {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 23.07692%;
-  float: left;
+  position: relative;
+  z-index: 100;
+  width: 220px;
+  height: 135px;
   font-size: 1.3em;
   line-height: 2.30769em;
   font-family: 'Open Sans Condensed', sans-serif;
   font-variant: small-caps;
-  border-bottom: 3px solid #474645;
-  border-right: 3px solid #474645;
+  border-bottom: 4px solid #474645;
+  border-right: 4px solid #474645;
   -moz-border-radius-bottomright: 3px;
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-/* line 38, ../_sass/default.scss */
+/* line 42, ../_sass/default.scss */
 #main-page h1:before {
   display: block;
   padding-left: 2px;
@@ -193,17 +192,13 @@ html, body {
   text-align: left;
   content: 'Imię i nazwisko ';
 }
-/* line 49, ../_sass/default.scss */
+/* line 53, ../_sass/default.scss */
 #main-page h1 {
   padding-bottom: .3em;
   font-size: 1.5em;
   line-height: 1em;
   text-align: center;
-  border-bottom: 3px solid #474645;
-}
-/* line 59, ../_sass/default.scss */
-#main-page ul {
-  border-right: 3px solid #474645;
+  border-bottom: 4px solid #474645;
 }
 /* line 63, ../_sass/default.scss */
 #main-page li {
@@ -216,11 +211,11 @@ html, body {
   padding-right: 1.78571%;
   display: inline-block;
   line-height: 1.9em;
-  border-right: 3px solid #474645;
+  border-right: 4px solid #474645;
 }
 /* line 72, ../_sass/default.scss */
 #main-page li:first-child {
-  margin-top: -3px;
+  margin-top: -1.5px;
   border-bottom: 3px solid #474645;
 }
 /* line 78, ../_sass/default.scss */
@@ -243,7 +238,7 @@ html, body {
 #main-page h2:before {
   display: block;
   margin-bottom: -3px;
-  margin-left: -3px;
+  margin-left: -2px;
   font-size: .4em;
   line-height: 1em;
   text-align: left;
@@ -266,4 +261,9 @@ html, body {
 /* line 117, ../_sass/default.scss */
 #main-page a:after {
   content: ' >';
+}
+/* line 121, ../_sass/default.scss */
+#main-page svg {
+  z-index: -100;
+  margin-top: -180px;
 }
