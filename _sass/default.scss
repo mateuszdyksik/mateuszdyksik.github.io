@@ -121,5 +121,100 @@ html, body {
   svg {
     z-index: -100;
     margin-top: -180px;
+
+    fill:#ffffff;
+    fill-opacity:1;
+    stroke:#2d2c2b;
+    stroke-width:3;
+    stroke-opacity:1;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+
+  .transparent {
+    fill: none;
+  }
+
+  .filled {
+    fill:#2d2c2b;
+    stroke:none;
+  }
+
+  .winder {
+    fill:none;
+    stroke-width:1px;
+  }
+
+  .laser-on_label {
+    fill:#00a784;
+    stroke:none;
+  }
+
+  .laser-off_label {
+    fill:#d71e38;
+    stroke:none;
+  }
+
+  .laser_beam {
+    fill:none;
+    stroke:#00b4ff;
+    stroke-width:5;
+  }
+  
+  .screws {
+    stroke-width:2;
+  }
+
+  .semi-transparent_mirror {
+    fill:#2d2c2b;
+  }
+
+  #monitor-left_light {
+    fill:#8e7d32;
+  }
+
+  #monitor-right_light {
+    fill:#ffed00;
+  }
+
+  #monitor-power_light {
+    fill:#9cc336;
+  }
+
+  .power_symbol {
+     stroke:#706e6c;
+     stroke-width:2;
+  }
+
+  #plot {
+    fill:none;
+    stroke:#e3007d;
+  }
+
+  .sample {
+    fill:#cce2f4;
+  }
+
+  .frames {
+    fill:none;
+    stroke:#c9c8c7;
+    stroke-width:2;
+    stroke-dashoffset:5;
+  }
+
+  .frame_border {
+    stroke-dasharray:12,4;
+  }
+
+  .frame_label {
+    stroke-dasharray:none;
+  }
+
+  .frame_label_name {
+    fill:#c9c8c7;
+    fill-opacity:1;
+    stroke:none;
   }
 }
