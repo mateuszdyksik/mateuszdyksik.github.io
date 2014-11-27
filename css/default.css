@@ -265,7 +265,9 @@ html, body {
 /* line 121, ../_sass/default.scss */
 #main-page svg {
   z-index: -100;
-  margin-top: -180px;
+  margin-top: -20%;
+  margin-left: 10%;
+  width: 80%;
   fill: #ffffff;
   fill-opacity: 1;
   stroke: #2d2c2b;
@@ -276,86 +278,86 @@ html, body {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-/* line 136, ../_sass/default.scss */
+/* line 139, ../_sass/default.scss */
 #main-page .transparent {
   fill: none;
 }
-/* line 140, ../_sass/default.scss */
+/* line 143, ../_sass/default.scss */
 #main-page .filled {
   fill: #2d2c2b;
   stroke: none;
 }
-/* line 145, ../_sass/default.scss */
+/* line 148, ../_sass/default.scss */
 #main-page .winder {
   fill: none;
   stroke-width: 1px;
 }
-/* line 150, ../_sass/default.scss */
+/* line 153, ../_sass/default.scss */
 #main-page .laser-on_label {
   fill: #00a784;
   stroke: none;
 }
-/* line 155, ../_sass/default.scss */
+/* line 158, ../_sass/default.scss */
 #main-page .laser-off_label {
   fill: #d71e38;
   stroke: none;
 }
-/* line 160, ../_sass/default.scss */
+/* line 163, ../_sass/default.scss */
 #main-page .laser_beam {
   fill: none;
   stroke: #00b4ff;
   stroke-width: 5;
 }
-/* line 166, ../_sass/default.scss */
+/* line 169, ../_sass/default.scss */
 #main-page .screws {
   stroke-width: 2;
 }
-/* line 170, ../_sass/default.scss */
+/* line 173, ../_sass/default.scss */
 #main-page .semi-transparent_mirror {
   fill: #2d2c2b;
 }
-/* line 174, ../_sass/default.scss */
+/* line 177, ../_sass/default.scss */
 #main-page #monitor-left_light {
   fill: #8e7d32;
 }
-/* line 178, ../_sass/default.scss */
+/* line 181, ../_sass/default.scss */
 #main-page #monitor-right_light {
   fill: #ffed00;
 }
-/* line 182, ../_sass/default.scss */
+/* line 185, ../_sass/default.scss */
 #main-page #monitor-power_light {
   fill: #9cc336;
 }
-/* line 186, ../_sass/default.scss */
+/* line 189, ../_sass/default.scss */
 #main-page .power_symbol {
   stroke: #706e6c;
   stroke-width: 2;
 }
-/* line 191, ../_sass/default.scss */
+/* line 194, ../_sass/default.scss */
 #main-page #plot {
   fill: none;
   stroke: #e3007d;
 }
-/* line 196, ../_sass/default.scss */
+/* line 199, ../_sass/default.scss */
 #main-page .sample {
   fill: #cce2f4;
 }
-/* line 200, ../_sass/default.scss */
+/* line 203, ../_sass/default.scss */
 #main-page .frames {
   fill: none;
   stroke: #c9c8c7;
   stroke-width: 2;
   stroke-dashoffset: 5;
 }
-/* line 207, ../_sass/default.scss */
+/* line 210, ../_sass/default.scss */
 #main-page .frame_border {
   stroke-dasharray: 12,4;
 }
-/* line 211, ../_sass/default.scss */
+/* line 214, ../_sass/default.scss */
 #main-page .frame_label {
   stroke-dasharray: none;
 }
-/* line 215, ../_sass/default.scss */
+/* line 218, ../_sass/default.scss */
 #main-page .frame_label_name {
   fill: #c9c8c7;
   fill-opacity: 1;
