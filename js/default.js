@@ -44,6 +44,55 @@ var laser = (function() {
 })();
 
 
+var monitor = (function() {
+    /***
+    Monitor object.
+
+    ***/
+    var monitorPowerButton = $('#monitor-power_button');
+    var monitorPowerLight = $('#monitor-power_light');
+    var monitorFirstModeLight = $('#monitor-first_mode_light');
+    var monitorSecondModeLight = $('#monitor-second_mode_light');
+    var monitorDisplay = $('#monitor-display');
+    var plot = $('#plot');
+
+    function powerOn() {
+        /***
+        Turn on monitor.
+
+        ***/
+        monitorPowerLight.velocity({'fill': '#a6d920'}, {delay: 80});
+        monitorSecondModeLight.velocity({'fill': '#ffed00'}, {delay: 20});
+        monitorDisplay.velocity({'fill': '#ffffff'}, {delay: 50});
+        plot.velocity('fadeIn', {duration: 1000, delay: 200});
+    };
+
+    function powerOff() {
+        /***
+        Turn off monitor.
+
+        ***/
+        monitorPowerLight.velocity({'fill': '#799926'}, {delay: 80});
+        monitorFirstModeLight.velocity({'fill': '#8e7d32'}, {delay: 120});
+        monitorSecondModeLight.velocity({'fill': '#8e7d32'}, {delay: 120});
+        monitorDisplay.velocity({'fill': '#333333'}, {delay: 50});
+        plot.hide();
+    };
+
+    return {
+        init: function() {
+            var isMonitorOn = true;
+            monitorPowerButton
+                .css('cursor', 'pointer')
+                .on('click', function() {
+                    isMonitorOn ? powerOff() : powerOn();
+                    isMonitorOn = !isMonitorOn;
+                });
+        }
+    };
+})();
+
+
 var frames = (function() {
     /***
     Frames and frames label animation.
@@ -145,6 +194,7 @@ $(function() {
     frames.hide();
 
     laser.init();
+    monitor.init();
 
     frames.show();
 });

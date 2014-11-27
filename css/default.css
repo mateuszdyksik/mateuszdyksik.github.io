@@ -317,16 +317,16 @@ html, body {
   fill: #2d2c2b;
 }
 /* line 177, ../_sass/default.scss */
-#main-page #monitor-left_light {
+#main-page #monitor-first_mode_light {
   fill: #8e7d32;
 }
 /* line 181, ../_sass/default.scss */
-#main-page #monitor-right_light {
+#main-page #monitor-second_mode_light {
   fill: #ffed00;
 }
 /* line 185, ../_sass/default.scss */
 #main-page #monitor-power_light {
-  fill: #9cc336;
+  fill: #a6d920;
 }
 /* line 189, ../_sass/default.scss */
 #main-page .power_symbol {
