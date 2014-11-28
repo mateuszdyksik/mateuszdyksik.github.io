@@ -329,35 +329,40 @@ html, body {
   fill: #a6d920;
 }
 /* line 189, ../_sass/default.scss */
+#main-page #monitor-display {
+  fill: #333333;
+  fill-opacity: 0;
+}
+/* line 194, ../_sass/default.scss */
 #main-page .power_symbol {
   stroke: #706e6c;
   stroke-width: 2;
 }
-/* line 194, ../_sass/default.scss */
+/* line 199, ../_sass/default.scss */
 #main-page #plot {
   fill: none;
   stroke: #e3007d;
 }
-/* line 199, ../_sass/default.scss */
+/* line 204, ../_sass/default.scss */
 #main-page .sample {
   fill: #cce2f4;
 }
-/* line 203, ../_sass/default.scss */
+/* line 208, ../_sass/default.scss */
 #main-page .frames {
   fill: none;
   stroke: #c9c8c7;
   stroke-width: 2;
   stroke-dashoffset: 5;
 }
-/* line 210, ../_sass/default.scss */
+/* line 215, ../_sass/default.scss */
 #main-page .frame_border {
   stroke-dasharray: 12,4;
 }
-/* line 214, ../_sass/default.scss */
+/* line 219, ../_sass/default.scss */
 #main-page .frame_label {
   stroke-dasharray: none;
 }
-/* line 218, ../_sass/default.scss */
+/* line 223, ../_sass/default.scss */
 #main-page .frame_label_name {
   fill: #c9c8c7;
   fill-opacity: 1;

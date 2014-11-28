@@ -1,6 +1,6 @@
 var laser = (function() {
     /***
-    Laser object.
+    Laser animations.
 
     ***/
     var laserBeam = $('.laser_beam');
@@ -38,6 +38,7 @@ var laser = (function() {
                 .on('click', function() {
                     isLaserOn ? powerOff() : powerOn();
                     isLaserOn = !isLaserOn;
+                    $(this).trigger('laserPower', isLaserOn);
                 });
         }
     };
@@ -46,7 +47,7 @@ var laser = (function() {
 
 var monitor = (function() {
     /***
-    Monitor object.
+    Monitor animations.
 
     ***/
     var monitorPowerButton = $('#monitor-power_button');
@@ -54,7 +55,6 @@ var monitor = (function() {
     var monitorFirstModeLight = $('#monitor-first_mode_light');
     var monitorSecondModeLight = $('#monitor-second_mode_light');
     var monitorDisplay = $('#monitor-display');
-    var plot = $('#plot');
 
     function powerOn() {
         /***
@@ -63,8 +63,7 @@ var monitor = (function() {
         ***/
         monitorPowerLight.velocity({'fill': '#a6d920'}, {delay: 80});
         monitorSecondModeLight.velocity({'fill': '#ffed00'}, {delay: 20});
-        monitorDisplay.velocity({'fill': '#ffffff'}, {delay: 50});
-        plot.velocity('fadeIn', {duration: 1000, delay: 200});
+        monitorDisplay.velocity({'fill-opacity': '0'}, {delay: 50});
     };
 
     function powerOff() {
@@ -75,8 +74,7 @@ var monitor = (function() {
         monitorPowerLight.velocity({'fill': '#799926'}, {delay: 80});
         monitorFirstModeLight.velocity({'fill': '#8e7d32'}, {delay: 120});
         monitorSecondModeLight.velocity({'fill': '#8e7d32'}, {delay: 120});
-        monitorDisplay.velocity({'fill': '#333333'}, {delay: 50});
-        plot.hide();
+        monitorDisplay.velocity({'fill-opacity': '1'}, {delay: 50});
     };
 
     return {
@@ -87,6 +85,30 @@ var monitor = (function() {
                 .on('click', function() {
                     isMonitorOn ? powerOff() : powerOn();
                     isMonitorOn = !isMonitorOn;
+                });
+        }
+    };
+})();
+
+
+var plot = (function() {
+    /***
+    Plot animations.
+
+    ***/
+    var plot = $('#plot');
+    var firstPath = 'm 460,245 c 35,0 40,-65 45,-65 5,0 5,60 15,60 10,0 5,-25 20,-25 15,0 10,30 70,30';
+    var flatPath = 'm 460,215 l 150,0';
+
+    return {
+        init: function() {
+            $('svg')
+                .on('laserPower', function(ev, isLaserOn) {
+                    if (isLaserOn) {
+                        plot.attr('d', firstPath);
+                    } else {
+                        plot.attr('d', flatPath);
+                    }
                 });
         }
     };
@@ -195,6 +217,7 @@ $(function() {
 
     laser.init();
     monitor.init();
+    plot.init();
 
     frames.show();
 });
