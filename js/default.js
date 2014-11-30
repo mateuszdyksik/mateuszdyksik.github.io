@@ -97,17 +97,56 @@ var plot = (function() {
 
     ***/
     var plot = $('#plot');
-    var firstPath = 'm 460,245 c 35,0 40,-65 45,-65 5,0 5,60 15,60 10,0 5,-25 20,-25 15,0 10,30 70,30';
-    var flatPath = 'm 460,215 l 150,0';
+
+    var firstPath = 'm 460 245 c 35 0 40 -65 37.5 -65 5 0 5 60 37.5 60 10 0 5 -25 37.5 -25 15 0 10 30 37.5 30';
+    var flatPath = 'm 460,215 c 0,0 0,0 37.5,0 0,0 0,0 37.5,0 0,0 0,0 37.5,0 0,0 0,0 37.5,0';
+
+    jQuery.fn.extend({
+        smoothPathTransitionTo: function(destPath, duration) {
+            var newPlot = plot.clone();
+            newPlot.attr('d', destPath);
+            var newSeg = newPlot[0].pathSegList;
+
+            for (var i = 1; i > 0; i--) {
+                setTimeout(function() {
+                var seg = plot[0].pathSegList;
+                for (var point = 0; point < seg.numberOfItems; ++point) {
+                    var srcY = seg.getItem(point).y;
+                    var destY = newSeg.getItem(point).y;
+                    if (srcY != destY) {
+                        seg[point].y = (srcY + destY) / 2;
+                    }
+                    if (seg[point].pathSegType ==
+                            SVGPathSeg.PATHSEG_CURVETO_CUBIC_REL) {
+                        // only y position matters
+                        var srcY1 = seg.getItem(point).y1;
+                        var destY1 = newSeg.getItem(point).y1;
+                        var srcY2 = seg.getItem(point).y2;
+                        var destY2 = newSeg.getItem(point).y2;
+                        if (srcY1 != destY1) {
+                            seg[point].y1 = (srcY1 + destY1) / 2;
+                        }
+                        if (srcY2 != destY2) {
+                            seg[point].y2 = (srcY2 + destY2) / 2;
+                        }
+                    }
+                }
+                console.log(i + ': ' + plot.attr('d'));
+                }, duration);
+            }
+
+            return this;
+        }
+    });
 
     return {
         init: function() {
             $('svg')
                 .on('laserPower', function(ev, isLaserOn) {
                     if (isLaserOn) {
-                        plot.attr('d', firstPath);
+                        plot.smoothPathTransitionTo(firstPath, 1000);
                     } else {
-                        plot.attr('d', flatPath);
+                        plot.smoothPathTransitionTo(flatPath, 200);
                     }
                 });
         }
